@@ -1,3 +1,6 @@
+
+// Polymorphism 多形: 在不同類別重複利用一個方法、 繼承方法的類別取得其方法。
+
 class Animal {
     public void animalSound() {
         System.out.println("The animal makes a sound");

@@ -1,0 +1,1 @@
+I used FileWriter Class's write() method to write this sentence
