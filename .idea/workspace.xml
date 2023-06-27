@@ -4,7 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97991a1e-ade8-4587-809e-fdf8d5799866" name="Changes" comment="" />
+    <list default="true" id="97991a1e-ade8-4587-809e-fdf8d5799866" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/.idea/welcome-to-docker.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/MAINTAINERS.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/src/Confetti.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repeated_number/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/number-repeatedNumber/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/repeated_number/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/number-repeatedNumber/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/number-repeatedNumber/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/repeated_number/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/number-repeatedNumber/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/repeated_number/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/number-repeatedNumber/number-repeatedNumber.iml" beforeDir="false" afterPath="$PROJECT_DIR$/repeated_number/number-repeatedNumber.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/number-repeatedNumber/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/repeated_number/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-data-jpa-course" beforeDir="false" afterPath="$PROJECT_DIR$/spring-data-jpa-course" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-data-jpa-course/src/main/java/com/example/demo/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-data-jpa-course/src/main/java/com/example/demo/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-data-jpa-course/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/spring-data-jpa-course/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +47,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
