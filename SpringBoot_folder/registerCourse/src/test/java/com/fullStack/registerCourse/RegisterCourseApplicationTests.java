@@ -1,10 +1,10 @@
-package com.YoutubeCourse.SpringBoot_Beginner;
+package com.fullStack.registerCourse;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringBootBeginnerApplicationTests {
+class RegisterCourseApplicationTests {
 
 	@Test
 	void contextLoads() {
