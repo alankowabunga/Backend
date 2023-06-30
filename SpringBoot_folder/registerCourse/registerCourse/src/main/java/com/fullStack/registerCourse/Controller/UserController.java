@@ -27,7 +27,7 @@ public class UserController {
 //    }
 
     @CrossOrigin(origins = "*")
-    @PostMapping("/post")
+    @PostMapping("/adduser")
     public void addUser(@RequestBody User newUser) {
 //        User user = new User();
 //        user.setFirst_name(request.firstName());
