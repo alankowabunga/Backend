@@ -8,7 +8,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="ProjectId" id="2RobClpBDvIFfBi8Ra4H0qHyVEW" />
   <component name="ProjectViewState">
@@ -19,7 +19,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/user/IdeaProjects/spring-data-jpa-course-Ultimate",
+    "last_opened_file_path": "C:/Users/user/IdeaProjects/SpringBoot_folder/spring-data-jpa-course-Ultimate",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -35,6 +35,7 @@
       <option name="presentableId" value="Default" />
       <updated>1687919255451</updated>
       <workItem from="1687919256453" duration="18000" />
+      <workItem from="1688697502145" duration="23000" />
     </task>
     <servers />
   </component>
