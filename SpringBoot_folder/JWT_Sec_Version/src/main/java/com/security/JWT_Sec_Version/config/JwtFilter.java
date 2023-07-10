@@ -21,5 +21,10 @@ public class JwtFilter implements OncePerRequestFilter {
             @NonNull FilterChain filterChain
     ) throws ServletException, IOException {
         final String authHeader = request.getHeader("Authorization");
+        final String jwt = authHeader.substring(7);
+        if (authHeader == "" || authHeader.startsWith("Bearer")) {
+            filterChain.doFilter(request,response);
+            return;
+        }
     }
 }
