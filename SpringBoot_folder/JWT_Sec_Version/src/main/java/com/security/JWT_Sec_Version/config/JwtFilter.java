@@ -14,6 +14,8 @@ import java.io.IOException;
 @Component
 @RequiredArgsConstructor
 public class JwtFilter implements OncePerRequestFilter {
+
+    private final JwtService jwtService;
     @Override
     protected void doFilterInternal(
             @NonNull HttpServletRequest request,
@@ -26,5 +28,6 @@ public class JwtFilter implements OncePerRequestFilter {
             filterChain.doFilter(request,response);
             return;
         }
+        final String userEmail = jwtService.extractUsername(jwt);
     }
 }
