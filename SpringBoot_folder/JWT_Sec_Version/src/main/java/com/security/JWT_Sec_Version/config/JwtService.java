@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import javax.crypto.SecretKey;
 import java.security.Key;
 import java.util.Base64;
+import java.util.function.Function;
 
 @Service
 public class JwtService {
@@ -16,11 +17,16 @@ public class JwtService {
 //    定義 JWT 密鑰( 256-bit ): 私人靜態不可變的字串型態常數
     private static final String SECRET_KEY = "uSfztxqAvg4IGQpNmY83YW4darMrnv6K";
 
+//  檢查 USER 是否存在
     public void extractUsername(String token) {
         return null;
     }
 
 //    取得單一 Claim
+    public <T> T extractSingleClaim(String token,Function<Claims,T> claimsResolver) {
+        final Claims claims = extractAllClaims(token);
+        return claimsResolver.apply(claims);
+    }
 
 //    取得所有 Claims
     public Claims extractAllClaims(String token) {
