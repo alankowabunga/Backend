@@ -13,7 +13,9 @@ import java.io.IOException;
 
 @Component
 @RequiredArgsConstructor
-public class JwtFilter implements OncePerRequestFilter {
+public class JwtFilter extends OncePerRequestFilter {
+
+    private final JwtService jwtService;
     @Override
     protected void doFilterInternal(
             @NonNull HttpServletRequest request,
@@ -26,5 +28,7 @@ public class JwtFilter implements OncePerRequestFilter {
             filterChain.doFilter(request,response);
             return;
         }
+//        檢查 JWT 後、檢查 USER 是否存在
+        final String userEmail = jwtService.extractUsername(jwt);
     }
 }
