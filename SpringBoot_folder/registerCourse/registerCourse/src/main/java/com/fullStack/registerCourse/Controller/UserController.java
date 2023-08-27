@@ -14,7 +14,7 @@ public class UserController {
 
     //    建立 UserRepository Interface 的 Instance 後使用  constructor injection
     UserRepository userRepository;
-//   當 Class 只有一個 Construtor 構造函數時，可以省略 @Autowired 註釋，Spring將自動檢測到這個構造函數並自動注入相應的依賴項。
+//   當 Class 只有一個 Constructor 構造函數時，可以省略 @Autowired 註釋，Spring將自動檢測到這個構造函數並自動注入相應的依賴項。
     public UserController(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
