@@ -5,36 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97991a1e-ade8-4587-809e-fdf8d5799866" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/.idea/welcome-to-docker.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/MAINTAINERS.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/src/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/src/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/src/Confetti.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/src/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/repeated_number/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/number-repeatedNumber/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/repeated_number/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/number-repeatedNumber/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Docker_Official_Guide/welcome-to-docker/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/number-repeatedNumber/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/repeated_number/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/number-repeatedNumber/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/repeated_number/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/number-repeatedNumber/number-repeatedNumber.iml" beforeDir="false" afterPath="$PROJECT_DIR$/repeated_number/number-repeatedNumber.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/number-repeatedNumber/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/repeated_number/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-data-jpa-course" beforeDir="false" afterPath="$PROJECT_DIR$/spring-data-jpa-course" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-data-jpa-course/src/main/java/com/example/demo/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-data-jpa-course/src/main/java/com/example/demo/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-data-jpa-course/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/spring-data-jpa-course/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/spring-framework-practice/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/spring-framework-practice/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/spring-framework-practice/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/spring-framework-practice/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/spring-framework-practice/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/spring-framework-practice/src/main/java/com/alanproject/spring_framework_practice/SpringFrameworkPracticeApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/spring-framework-practice/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/spring-framework-practice/src/test/java/com/alanproject/spring_framework_practice/SpringFrameworkPracticeApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,17 +38,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Java/Courses",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

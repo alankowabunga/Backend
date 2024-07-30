@@ -1,0 +1,62 @@
+ginmao:
+  admin:
+    system-id: BEGINNER
+    system-name: GTWEB測試環境
+    system-url: https://localhost:8443
+  crl:
+    grca: http://grca.nat.gov.tw/repository/CRL2/CA.crl
+    gca: http://gca.nat.gov.tw/repository/GCA4/CRL2/complete.crl
+    moica: https://moica.nat.gov.tw/repository/MOICA/CRL2/complete.crl
+    moeaca: https://moeaca.nat.gov.tw/repository/MOEACA/CRL2/complete.crl
+application:
+  version: 1
+spring:
+  h2:
+    console:
+      enable: true
+  datasource:
+    url: jdbc:h2:mem:h2db
+  jpa:
+    generate-ddl: true
+    show-sql: false
+#    database-platform: com.ginmao.jpa.dialect.GtMysql57Dialect
+    properties:
+      javax:
+        persistence:
+          validation:
+            mode: none
+      hibernate:
+        dialect:
+          storage_engine: innodb
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+      write-dates-as-timestamps: false
+  web:
+    resources:
+      cache:
+        period: 86400s
+  session:
+    store-type: none
+  servlet:
+    multipart:
+      max-file-size: 40MB
+      max-request-size: 50MB
+  jmx:
+    enabled: false
+server:
+  servlet:
+    session:
+      cookie:
+        name: PHPSESSIONID
+  compression:
+    enabled: true
+pebble:
+  suffix: .peb
+  cache: true
+springdoc:
+  packages-to-scan:
+    - com.ginmao.web.api
+logging:
+  level:
+    root: warn

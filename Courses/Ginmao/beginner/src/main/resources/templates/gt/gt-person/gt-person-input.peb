@@ -1,0 +1,59 @@
+{# @pebvariable name="main" type="com.ginmao.domain.GtDistrict" #}
+
+    {% extends 'fragment/gt-layout' %}
+
+    {% block script %}
+    {{ parent() }}
+<script>
+
+</script>
+{% endblock %}
+
+{% block main %}
+    {% if main.id is empty %}
+        {% set action='/gt/gt-person/add' %}
+        {% else %}
+        {% set action='/gt/gt-person/update' %}
+    {% endif %}
+<form action="{{ href(action) }}" method="post" class="gt-validate">
+    {{ forms.csrf(_csrf) }}
+{{ forms.hidden('main.id') }}
+{{ forms.hidden('main.parent.id') }}
+    <div class="card border-primary mt-1">
+        <div class="card-body">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>人員</label>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-5">
+                    <label class="required">姓名</label>
+                    {{ forms.text('main.name', 'required') }}
+                </div>
+                <div class="form-group col-md-5">
+                    <label class="required">生日</label>
+                    {{ forms.datePicker('main.birthday', 'required') }}
+                </div>
+                <div class="form-group col-md-2">
+                    <label class="required">性別</label>
+                    {{ forms.text('main.gender', 'required') }}
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    {{ forms.checkboxs('main.disabled', disables) }}
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">
+                {{ main.id is empty ? '新增' : '修改' }}
+            </button>
+            {{ forms.returnButton("/gt/gt-person") }}
+        </div>
+    </div>
+</form>
+{% endblock %}

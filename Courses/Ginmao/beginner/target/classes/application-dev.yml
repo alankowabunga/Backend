@@ -1,0 +1,46 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://127.0.0.1:3306/beginner?characterEncoding=utf8&serverTimezone=Asia/Taipei&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: beginner
+    password: qwer1234
+    hikari:
+      maximum-pool-size: 3
+  jpa:
+    generate-ddl: false
+    show-sql: false
+  mail:
+    host: exmail.jetwell.com.tw
+    port: 587
+    username: 帳號@ginmao.com.tw
+    password: 密碼
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          ssl:
+            trust: exmail.jetwell.com.tw
+debug: false
+logging:
+  level:
+    org.hibernate: FATAL
+    org.springframework.security: FATAL
+    org.springframework.security.oauth2: FATAL
+pebble:
+  cache: false
+ginmao:
+  admin:
+    mail-from: 帳號@ginmao.com.tw
+    upload: ${user.home}/upload/gtweb-test
+server:
+  ssl:
+    enabled: true
+    key-store-type: PKCS12
+    key-store: classpath:gtweb.p12
+    key-store-password: qwer1234
+    key-alias: gtweb
+  port: 8443

@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:h2:mem:beginner;DB_CLOSE_DELAY=-1;MODE=MySQL;TRACE_LEVEL_FILE=0;TRACE_LEVEL_SYSTEM_OUT=0
+    driver-class-name: org.h2.Driver
+    hikari:
+      maximum-pool-size: 10
+  jpa:
+    generate-ddl: true
+    show-sql: false
+  mail:
+    host: exmail.jetwell.com.tw
+    port: 587
+    username: 帳號@ginmao.com.tw
+    password: 密碼
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          ssl:
+            trust: exmail.jetwell.com.tw
+debug: false
+logging:
+  level:
+    root: warn
+pebble:
+  cache: false
+ginmao:
+  admin:
+    mail-from: 帳號@ginmao.com.tw
