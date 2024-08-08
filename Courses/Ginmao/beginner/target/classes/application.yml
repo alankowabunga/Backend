@@ -11,15 +11,10 @@ ginmao:
 application:
   version: 1
 spring:
-  h2:
-    console:
-      enable: true
-  datasource:
-    url: jdbc:h2:mem:h2db
   jpa:
-    generate-ddl: true
+    generate-ddl: false
     show-sql: false
-#    database-platform: com.ginmao.jpa.dialect.GtMysql57Dialect
+    database-platform: com.ginmao.jpa.dialect.GtMysql57Dialect
     properties:
       javax:
         persistence:

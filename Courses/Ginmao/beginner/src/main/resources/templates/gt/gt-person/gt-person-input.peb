@@ -1,9 +1,9 @@
-{# @pebvariable name="main" type="com.ginmao.domain.GtDistrict" #}
+{# @pebvariable name="main" type="com.ginmao.domain.GtPerson" #}
 
-    {% extends 'fragment/gt-layout' %}
+{% extends 'fragment/gt-layout' %}
 
-    {% block script %}
-    {{ parent() }}
+{% block script %}
+{{ parent() }}
 <script>
 
 </script>
@@ -17,37 +17,43 @@
     {% endif %}
 <form action="{{ href(action) }}" method="post" class="gt-validate">
     {{ forms.csrf(_csrf) }}
-{{ forms.hidden('main.id') }}
-{{ forms.hidden('main.parent.id') }}
+    {{ forms.hidden('main.id') }}
     <div class="card border-primary mt-1">
         <div class="card-body">
-            <div class="form-row">
-                <div class="form-group">
-                    <label>人員</label>
-                </div>
-            </div>
 
-            <div class="form-row">
-                <div class="form-group col-md-5">
+            <div class="form-row row-cols row-cols-sm-2 row-cols-md-3 row-cols-lg-5">
+
+                <div class="form-group col">
                     <label class="required">姓名</label>
                     {{ forms.text('main.name', 'required') }}
                 </div>
-                <div class="form-group col-md-5">
+
+                <div class="form-group col">
                     <label class="required">生日</label>
                     {{ forms.datePicker('main.birthday', 'required') }}
                 </div>
-                <div class="form-group col-md-2">
-                    <label class="required">性別</label>
-                    {{ forms.text('main.gender', 'required') }}
-                </div>
-            </div>
 
-            <div class="form-row">
-                <div class="form-group">
-                    {{ forms.checkboxs('main.disabled', disables) }}
+                <div class="form-group col">
+                    <label class="required">性別</label>
+                    <div>
+                        {{ forms.radios('main.gender', genders) }}
+                    </div>
                 </div>
+
+                <div class="form-group col">
+                    <label class="required">身分證字號</label>
+                    {{ forms.text('main.idno', 'required') }}
+                </div>
+
+
+                <div class="form-group col">
+                    <label class="required">地址</label>
+                    {{ forms.text('main.address') }}
+                </div>
+
             </div>
         </div>
+
         <div class="card-footer">
             <button type="submit" class="btn btn-primary">
                 {{ main.id is empty ? '新增' : '修改' }}

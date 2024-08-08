@@ -9,11 +9,6 @@
     <remote-repository>
       <option name="id" value="gitlab-maven" />
       <option name="name" value="Ginmao Gitlab Package Registry" />
-      <option name="url" value="http://172.16.32.73/api/v4/projects/96/packages/maven" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="gitlab-maven" />
-      <option name="name" value="Ginmao Gitlab Package Registry" />
       <option name="url" value="https://172.16.32.73/api/v4/projects/96/packages/maven" />
     </remote-repository>
     <remote-repository>

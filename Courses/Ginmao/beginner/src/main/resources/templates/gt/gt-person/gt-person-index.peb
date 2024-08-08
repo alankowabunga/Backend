@@ -1,8 +1,8 @@
-{#    {% extends 'fragment/gt-layout' %}#}
+    {% extends 'fragment/gt-layout' %}
 
     {% block main %}
 <form action="{{ href('/gt/gt-person') }}" method="post">
-    {{ forms.csrf(_csrf) }}{#    csrf 避免被 spring security 攔下來    #}
+    {{ forms.csrf(_csrf) }}
     {{ forms.crudButtons('/gt/gt-person') }}
     <div class="card border-success mt-1">
         <div class="card-header">資料篩選</div>
@@ -20,6 +20,14 @@
                         {{ forms.datePicker('queryContext.conditions[before-birthday]') }}
                     </div>
                 </div>
+
+                <div class="form-group col-md-4">
+                    <label>身分證字號</label>
+                    <div class="d-flex">
+                        {{ forms.text('queryContext.conditions[like-idno]') }}
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -28,21 +36,25 @@
         <div class="table-responsive">
             <table class="table table-sm table-bordered table-hover table-striped bg-white">
                 <thead>
-                    <tr class="text-center bg-gradient-light">
-                        <th class="text-nowrap">姓名{{ forms.hidden('queryContext.sorts[name]') }}</th>
-                        <th class="text-nowrap">生日{{ forms.hidden('queryContext.sorts[birthday]') }}</th>
-                        <th class="text-nowrap">性別{{ forms.hidden('queryContext.sorts[gender]') }}</th>
-                        <th class="text-nowrap edit-cell">功能</th>
-                    </tr>
+                <tr class="text-center bg-gradient-light">
+                    <th class="text-nowrap">姓名{{ forms.hidden('queryContext.sorts[name]') }}</th>
+                    <th class="text-nowrap">生日{{ forms.hidden('queryContext.sorts[birthday]') }}</th>
+                    <th class="text-nowrap">性別{{ forms.hidden('queryContext.sorts[gender]') }}</th>
+                    <th class="text-nowrap">身分證字號{{ forms.hidden('queryContext.sorts[idno]') }}</th>
+                    <th class="text-nowrap">地址{{ forms.hidden('queryContext.sorts[address]') }}</th>
+                    <th class="text-nowrap edit-cell">功能</th>
+                </tr>
                 </thead>
-                <tbody class="text-center">
+                <tbody>
                     {% for item in page.content %}
                     <tr>
                         <td>{{ item.name }}</td>
                         <td>{{ item.birthday }}</td>
                         <td>{{ item.gender }}</td>
+                        <td>{{ item.idno }}</td>
+                        <td>{{ item.address }}</td>
                         <td>
-                            {{ forms.baseRowButtons(item, '/gt/gt-district') }}
+                            {{ forms.baseRowButtons(item, '/gt/gt-person') }}
                         </td>
                     </tr>
                     {% endfor %}

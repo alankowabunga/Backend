@@ -1,0 +1,5 @@
+com\ginmao\domain\Gender.class
+com\ginmao\BeginnerApplication.class
+com\ginmao\domain\GtPerson.class
+com\ginmao\ServletInitializer.class
+com\ginmao\domain\GtPerson_.class

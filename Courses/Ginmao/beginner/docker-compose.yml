@@ -1,8 +1,6 @@
-version: '3'
-
 services:
   mysql-gtweb:
-    image: mysql:latest
+    image: mysql:8.0
     restart: always
     container_name: mysql-beginner
     platform: linux/amd64
@@ -14,6 +12,7 @@ services:
       - 3306:3306
     volumes:
       - ../docker/mysql-beginner/data:/var/lib/mysql
+#      將本地的 ../docker/mysql-beginner/data 目錄掛載到 MySQL 容器內的 /var/lib/mysql 目錄。這意味著 MySQL 容器中的所有數據都會存儲在本地的 ../docker/mysql-beginner/data 目錄中，即使容器被刪除或重新創建，數據也會被保留。
     environment:
       - MYSQL_ROOT_PASSWORD=qwer1234
       - MYSQL_USER=beginner

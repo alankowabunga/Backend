@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title></title>
+    <link rel="stylesheet" href="{{ href('/webjars/bootstrap/4.6.0/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ href('/webjars/ionicons/2.0.1/css/ionicons.min.css') }}">
+    <link rel="stylesheet" href="{{ href('/asset/gt/css/login.css?v20220905') }}">
+</head>
+
+<body>
+<div class="login-dark">
+    <form method="post" action="{{ href('/gt/login/process') }}">
+        <input type="hidden" name="{{ _csrf.parameterName }}" value="{{ _csrf.token }}"/>
+        <input type="hidden" name="token" value="{{ token }}">
+        <input type="hidden" name="cardNo"/>
+        <input type="hidden" name="signatureValue"/>
+        <input type="hidden" name="cert"/>
+        <h2 class="sr-only">Login Form</h2>
+        <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+        <div class="form-group">
+            <input class="form-control" type="text" name="account" placeholder="請輸入帳號" autocomplete="off">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="password" name="mima" placeholder="請輸入密碼" autocomplete="off">
+        </div>
+        {% if securitySetting.multiFactorAuth == 1 %}
+            <div class="input-group">
+                <input class="form-control" type="text" name="captcha" placeholder="請輸驗證碼" autocomplete="off">
+                <div class="input-group-append bg-transparent">
+                <span class="input-group-text bg-transparent  border-0">
+                    <img id="kaptcha" src="{{ href('/home/kaptcha/image') }}"
+                         title="點擊更新"
+                         data-toggle="tooltip"
+                         data-placement="right"
+                         style="cursor: pointer;"/>
+                </span>
+                </div>
+            </div>
+        {% endif %}
+        <div class="row justify-content-center">
+            <div class="btn-group" role="group" aria-label="登入按鈕">
+                <button class="btn btn-secondary" type="submit">登入</button>
+                <button class="btn btn-success" type="button" id="certLogin">憑證登入</button>
+            </div>
+        </div>
+
+        <a href="{{ href("/home/forget") }}">忘記密碼</a>
+        {% if session.getAttribute("SPRING_SECURITY_LAST_EXCEPTION") is not empty %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>{{ session.getAttribute("SPRING_SECURITY_LAST_EXCEPTION") | string }}</strong>
+                <button class="close" type="button" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+        {% endif %}
+
+    </form>
+
+</div>
+<script src="{{ href('/webjars/jquery/3.6.0/jquery.min.js') }}"></script>
+<script src="{{ href('/asset/gt/js/psh1.js') }}"></script>
+<script src="{{ href('/webjars/bootstrap/4.6.0/js/bootstrap.bundle.min.js') }}"></script>
+    {% include 'fragment/gt-hicos' %}
+<script nonce="{{ cspNonce }}">
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+
+        $('#kaptcha').click(function () {
+            var url = this.src;
+            var pos = url.indexOf("?");
+            if (pos > 0) {
+                url = url.substring(0, pos);
+            }
+            this.src = url + "?" + (new Date()).getTime();
+        });
+
+        var helper = com.ginmao.gca.PkiHelper.create();
+        var pkiLayer = new com.ginmao.gca.PkiLayer(helper);
+        var startCertLogin = function () {
+            $("select").prop("disabled", true);
+            $("input[name=account]").prop("disabled", true);
+            $("input[name=mima]").prop("disabled", true);
+            $("input[name=captcha]").prop("disabled", true);
+            var token = $("input[name=token]").val();
+            pkiLayer.sign(
+                    {tbs: token},
+                    function (signature, certb64, cardNo) {
+                        $("input[name=signatureValue]").val(signature);
+                        $("input[name=cert]").val(certb64);
+                        $("input[name=cardNo]").val(cardNo);
+                        document.forms[0].submit();
+                    }
+            );
+        };
+
+        $("#certLogin").click(startCertLogin);
+    });
+</script>
+</body>
+
+</html>

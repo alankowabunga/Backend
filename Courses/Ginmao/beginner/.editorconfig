@@ -13,5 +13,5 @@ end_of_line = crlf
 max_line_length = off
 trim_trailing_whitespace = false
 
-[*.{java, xml, peb, js}]
+[*.{java,xml,peb,js}]
 indent_size = 4

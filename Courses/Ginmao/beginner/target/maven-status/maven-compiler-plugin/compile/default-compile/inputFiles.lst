@@ -1,11 +1,4 @@
-C:\Java\Courses\Ginmao\beginner\src\main\java\com\pure_springboot\service\GtPersonService.java
-C:\Java\Courses\Ginmao\beginner\src\main\java\com\pure_springboot\web\gt\GtPersonController.java
-C:\Java\Courses\Ginmao\beginner\src\main\java\com\ginmao\BeginnerApplication.java
-C:\Java\Courses\Ginmao\beginner\src\main\java\com\pure_springboot\repository\GtPersonRepository.java
-C:\Java\Courses\Ginmao\beginner\src\main\java\com\pure_springboot\domain\GtPerson.java
-C:\Java\Courses\Ginmao\beginner\src\main\java\com\ginmao\domain\GtPerson.java
-C:\Java\Courses\Ginmao\beginner\src\main\java\com\pure_springboot\domain\Gender.java
-C:\Java\Courses\Ginmao\beginner\src\main\java\com\pure_springboot\jpa\convert\GenderConverter.java
-C:\Java\Courses\Ginmao\beginner\src\main\java\com\pure_springboot\service\impl\GtPersonServiceImpl.java
-C:\Java\Courses\Ginmao\beginner\src\main\java\com\pure_springboot\PureSpringBoot.java
-C:\Java\Courses\Ginmao\beginner\src\main\java\com\ginmao\ServletInitializer.java
+C:\Users\User\IdeaProjects\beginner\src\main\java\com\ginmao\BeginnerApplication.java
+C:\Users\User\IdeaProjects\beginner\src\main\java\com\ginmao\ServletInitializer.java
+C:\Users\User\IdeaProjects\beginner\src\main\java\com\ginmao\domain\GtPerson.java
+C:\Users\User\IdeaProjects\beginner\src\main\java\com\ginmao\domain\Gender.java

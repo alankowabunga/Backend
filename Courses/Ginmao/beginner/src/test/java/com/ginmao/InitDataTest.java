@@ -117,7 +117,7 @@ public class InitDataTest {
                     caKeyPair = CertificateUtils.createRootCA("CN=gtweb,OU=ginmao,C=TW", 3650);
                     cert = caKeyPair.getCert().getEncoded();
                 } else {
-                    String resourceName = "/" + caType.name() + "2.cer";
+                    String resourceName = "/" + caType.name() + ".cer";
                     cert = IOUtils.resourceToByteArray(resourceName);
                 }
 

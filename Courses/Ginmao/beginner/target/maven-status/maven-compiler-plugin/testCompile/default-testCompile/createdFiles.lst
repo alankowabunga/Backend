@@ -1,0 +1,5 @@
+com\ginmao\FastTestSuite.class
+com\ginmao\provider\CityProvider.class
+com\ginmao\InitDataTest.class
+com\ginmao\FullTestSuite.class
+com\ginmao\provider\GtProgramProvider.class

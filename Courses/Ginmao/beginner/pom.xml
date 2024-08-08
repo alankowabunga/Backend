@@ -7,6 +7,7 @@
     <groupId>com.ginmao</groupId>
     <artifactId>beginner</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>${packaging.format}</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -14,18 +15,38 @@
         <java.version>1.8</java.version>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
+        <packaging.format>war</packaging.format>
 
-        <spring-boot.version>2.6.6</spring-boot.version>
-        <gtweb.version>1.7-SNAPSHOT</gtweb.version>
-        <mysql-connector-java.version>8.0.29</mysql-connector-java.version>
+        <spring-boot.version>2.7.18</spring-boot.version>
+        <gtweb.version>1.8-SNAPSHOT</gtweb.version>
+        <mysql-connector-java.version>8.0.30</mysql-connector-java.version>
 
         <lombok.version>1.18.24</lombok.version>
+        <javafaker.version>1.0.2</javafaker.version>
         <hibernate-jpamodelgen.version>5.6.7.Final</hibernate-jpamodelgen.version>
-        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+
+        <junit-jupiter-engine.version>5.8.0</junit-jupiter-engine.version>
+        <junit-platform-suite-engine.version>1.9.0</junit-platform-suite-engine.version>
+        <mockito-junit-jupiter.version>4.7.0</mockito-junit-jupiter.version>
+        <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
+        <maven-war-plugin.version>3.3.1</maven-war-plugin.version>
+        <spotbugs-maven-plugin.version>4.7.1.1</spotbugs-maven-plugin.version>
+        <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
+        <maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
+        <maven-javadoc-plugin.version>3.4.0</maven-javadoc-plugin.version>
+        <maven-site-plugin.version>3.10.0</maven-site-plugin.version>
+        <dependency-check-maven.version>7.1.2</dependency-check-maven.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+            </dependency>
+
+
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
@@ -37,30 +58,7 @@
     </dependencyManagement>
 
     <dependencies>
-<!--    TODO:REMOVE  在排錯之前先自己加-->
-      <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-data-jpa</artifactId>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-web</artifactId>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-devtools</artifactId>
-        <scope>runtime</scope>
-        <optional>true</optional>
-      </dependency>
-      <dependency>
-        <groupId>io.pebbletemplates</groupId>
-        <artifactId>pebble-spring-boot-starter</artifactId>
-        <version>3.1.5</version>
-      </dependency>
-
-
-
-      <dependency>
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
@@ -75,45 +73,48 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
+            <version>${spring-boot.version}</version>
             <optional>true</optional>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>com.ginmao</groupId>-->
-<!--            <artifactId>gtweb-ui-adminlte</artifactId>-->
-<!--            <version>${gtweb.version}</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.ginmao</groupId>-->
-<!--            <artifactId>gtweb-common</artifactId>-->
-<!--            <version>${gtweb.version}</version>-->
-<!--            <exclusions>-->
-<!--                <exclusion>-->
-<!--                    <artifactId>spring-boot-starter-tomcat</artifactId>-->
-<!--                    <groupId>org.springframework.boot</groupId>-->
-<!--                </exclusion>-->
-<!--            </exclusions>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.ginmao</groupId>-->
-<!--            <artifactId>gtweb-jasperreports</artifactId>-->
-<!--            <version>${gtweb.version}</version>-->
-<!--        </dependency>-->
-
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-undertow</artifactId>
-            <scope>provided</scope>
+            <groupId>com.ginmao</groupId>
+            <artifactId>gtweb-ui-adminlte</artifactId>
+            <version>${gtweb.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.ginmao</groupId>
+            <artifactId>gtweb-common</artifactId>
+            <version>${gtweb.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ginmao</groupId>
+            <artifactId>gtweb-jasperreports</artifactId>
+            <version>${gtweb.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql-connector-java.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>${javafaker.version}</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.yaml</groupId>
+                    <artifactId>snakeyaml</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring-boot.version}</version>
             <scope>test</scope>
             <exclusions>
                 <exclusion>
@@ -127,34 +128,42 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-suite-engine</artifactId>
+            <version>${junit-platform-suite-engine.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-junit-jupiter</artifactId>
+            <version>${mockito-junit-jupiter.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-            <scope>runtime</scope>
+            <scope>test</scope>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.ginmao</groupId>-->
-<!--            <artifactId>gtweb-junit5</artifactId>-->
-<!--            <version>${gtweb.version}</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.ginmao</groupId>
+            <artifactId>gtweb-junit5</artifactId>
+            <version>${gtweb.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>1.6.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openapitools</groupId>
+            <artifactId>jackson-databind-nullable</artifactId>
+            <version>0.2.2</version>
+        </dependency>
     </dependencies>
 
     <build>
+        <finalName>beginner</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -164,11 +173,6 @@
                     <source>1.8</source>
                     <target>1.8</target>
                     <encoding>UTF-8</encoding>
-                    <compilerArguments>
-                        <verbose/>
-                        <bootclasspath>${java.home}/lib/rt.jar${path.separator}${java.home}/lib/jce.jar
-                        </bootclasspath>
-                    </compilerArguments>
                     <annotationProcessorPaths>
                         <path>
                             <groupId>org.projectlombok</groupId>
@@ -188,6 +192,210 @@
                     </annotationProcessorPaths>
                 </configuration>
             </plugin>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>${maven-war-plugin.version}</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+                    <!-- 顯示Junit5 @DisplayName設定 -->
+                    <statelessTestsetReporter
+                        implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5Xml30StatelessReporter">
+                        <disable>false</disable>
+                        <version>3.0</version>
+                        <usePhrasedFileName>false</usePhrasedFileName>
+                        <usePhrasedTestSuiteClassName>true</usePhrasedTestSuiteClassName>
+                        <usePhrasedTestCaseClassName>true</usePhrasedTestCaseClassName>
+                        <usePhrasedTestCaseMethodName>true</usePhrasedTestCaseMethodName>
+                    </statelessTestsetReporter>
+                    <consoleOutputReporter
+                        implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5ConsoleOutputReporter">
+                        <disable>false</disable>
+                        <encoding>UTF-8</encoding>
+                        <usePhrasedFileName>false</usePhrasedFileName>
+                    </consoleOutputReporter>
+                    <statelessTestsetInfoReporter
+                        implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5StatelessTestsetInfoReporter">
+                        <disable>false</disable>
+                        <usePhrasedFileName>false</usePhrasedFileName>
+                        <usePhrasedClassNameInRunning>true</usePhrasedClassNameInRunning>
+                        <usePhrasedClassNameInTestCaseSummary>true</usePhrasedClassNameInTestCaseSummary>
+                    </statelessTestsetInfoReporter>
+
+                    <includes>
+                        <include>**/Test*.java</include>
+                        <include>**/*Test.java</include>
+                        <include>**/*Tests.java</include>
+                        <include>**/*TestCase.java</include>
+                    </includes>
+                    <excludedGroups>slow</excludedGroups>
+                    <groups>full,fast</groups>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter-engine</artifactId>
+                        <version>${junit-jupiter-engine.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>${maven-site-plugin.version}</version>
+            </plugin>
         </plugins>
     </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>${spotbugs-maven-plugin.version}</version>
+                <configuration>
+                    <excludeFilterFile>${project.basedir}/config/findbugs/findbugs-filter.xml</excludeFilterFile>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>${maven-checkstyle-plugin.version}</version>
+                <configuration>
+                    <configLocation>${project.basedir}/config/checkstyle/checkstyle.xml</configLocation>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.owasp</groupId>
+                <artifactId>dependency-check-maven</artifactId>
+                <version>${dependency-check-maven.version}</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>aggregate</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+        </plugins>
+    </reporting>
+
+    <profiles>
+        <profile>
+            <id>table-layout</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>${maven-javadoc-plugin.version}</version>
+                        <configuration>
+                            <show>private</show>
+                            <includeDependencySources>true</includeDependencySources>
+                            <dependencySourceIncludes>
+                                <dependencySourceInclude>com.ginmao:*</dependencySourceInclude>
+                            </dependencySourceIncludes>
+                            <doclet>com.ginmao.doclet.JpaEntityToSchema</doclet>
+                            <docletArtifacts>
+                                <docletArtifact>
+                                    <groupId>com.ginmao</groupId>
+                                    <artifactId>jpa-doclet</artifactId>
+                                    <version>1.2</version>
+                                </docletArtifact>
+                            </docletArtifacts>
+                            <useStandardDocletOptions>false</useStandardDocletOptions>
+                            <!--                    <additionalJOption>-J-Dschema-template=${project.basedir}/schema-template.docx</additionalJOption>-->
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>wsdl2java</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>jaxws-maven-plugin</artifactId>
+                        <version>2.6</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>wsimport</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <wsdlDirectory>${project.basedir}/wsdl</wsdlDirectory>
+                            <wsdlFiles>
+                                <wsdlFile>person.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                            <keep>true</keep>
+                            <sourceDestDir>${project.build.sourceDirectory}</sourceDestDir>
+                            <packageName>com.ginmao.ws.client.person</packageName>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>open-api-client</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.openapitools</groupId>
+                        <artifactId>openapi-generator-maven-plugin</artifactId>
+                        <version>6.0.0</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>generate</goal>
+                                </goals>
+                                <configuration>
+                                    <inputSpec>${project.basedir}/src/docs/api-docs.json</inputSpec>
+                                    <generatorName>java</generatorName>
+                                    <configOptions>
+                                        <apiPackage>com.ginmao.domain.client.api</apiPackage>
+                                        <modelPackage>com.ginmao.domain.client.model</modelPackage>
+                                        <dateLibrary>java8-localdatetime</dateLibrary>
+                                        <library>resttemplate</library>
+                                    </configOptions>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>spring-boot-app</id>
+            <properties>
+                <packaging.format>jar</packaging.format>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>repackage</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>

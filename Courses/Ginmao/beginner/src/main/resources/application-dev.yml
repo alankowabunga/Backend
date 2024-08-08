@@ -8,8 +8,8 @@ spring:
     hikari:
       maximum-pool-size: 3
   jpa:
-    generate-ddl: false
-    show-sql: false
+    generate-ddl: true
+    show-sql: true
   mail:
     host: exmail.jetwell.com.tw
     port: 587
@@ -36,6 +36,7 @@ ginmao:
   admin:
     mail-from: 帳號@ginmao.com.tw
     upload: ${user.home}/upload/gtweb-test
+    api-security-enabled: false
 server:
   ssl:
     enabled: true
@@ -44,3 +45,5 @@ server:
     key-store-password: qwer1234
     key-alias: gtweb
   port: 8443
+cxf:
+  path: /ws
